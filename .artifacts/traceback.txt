@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/compilation/module_compiler.py", line 405, in compile
+    function.evaluate("Compiling", inputset, configuration, function_artifacts)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/compilation/module_compiler.py", line 233, in evaluate
+    self.trace(first_sample, artifacts)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/compilation/module_compiler.py", line 146, in trace
+    self.graph = Tracer.trace(self.function, parameters, location=self.location)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/tracing/tracer.py", line 82, in trace
+    output_tracers: Any = function(**arguments)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/ml/common/utils.py", line 1, in _lambda__proxy
+    """Utils that can be re-used by other pieces of code in the module."""
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/ml/onnx/convert.py", line 330, in <lambda>
+    lambda *args: execute_onnx_with_numpy_trees(
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/ml/onnx/onnx_utils.py", line 545, in execute_onnx_with_numpy_trees
+    outputs = op_type(*curr_inputs, **attributes)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/ml/onnx/ops_impl.py", line 294, in numpy_gemm
+    y = processed_alpha * numpy.matmul(a_prime, b_prime) + processed_beta * c_prime
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/tracing/tracer.py", line 466, in __array_ufunc__
+    return Tracer._trace_numpy_operation(ufunc, *sanitized_args, **kwargs)
+  File "/Users/olmaoster/Desktop/unideb/fhe/tdk/code/env/lib/python3.9/site-packages/concrete/fhe/tracing/tracer.py", line 424, in _trace_numpy_operation
+    evaluation = operation(*sample, **kwargs)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 35 is different from 34)
